@@ -20,50 +20,84 @@ public class FigurasGeometricas {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("¡¡¡MODELAMIENTO DE FIGURAS GEOMÉTRICAS!!!");
-        System.out.print("\tCírculo:");
-        circulo figuracirculo = new circulo();
+        // Creación de objetos
+        circulo figura1 = new circulo(2);
+        rectangulo figura2 = new rectangulo(1,2);
+        cuadrado figura3 = new cuadrado(3);
+        triangulo figura4 = new triangulo(3,5);
+        // Círculo
+        System.out.println("\n\tCírculo:");
+        System.out.println("\nEl área del círculo es = " + figura1.calcularArea());
+        System.out.println("El perímetro del círculo es = " + figura1.calcularPerimetro());
+        //Rectángulo
+        System.out.println("\n\tRectángulo:");
+        System.out.println("\nEl área del rectángulo es = " + figura2.calcularArea());
+        System.out.println("El perímetro del rectángulo es = " + figura2.calcularPerimetro());
+        //Cuadrado
+        System.out.println("\n\tCuadrado:");
+        System.out.println("\nEl área del cuadrado es = "+ figura3.calcularArea());
+        System.out.println("El perímetro del cuadrado es = " + figura3.calcularPerimetro());
+        //Triángulo
+        System.out.println("\n\tTriángulo:");
+        System.out.println("\nEl área del triángulo es = " + figura4.calcularArea());
+        System.out.println("El perímetro del triángulo es = " + figura4.calcularPerimetro());
+        figura4.determinarTipoTriangulo();
     }
 }
 
 class circulo{
-    int radio;
-        public static double calcularArea(int radio){
+       int radio;
+        circulo(int radio){
+        this.radio = radio;
+    }
+         double calcularArea(){
             return Math.PI*Math.pow(radio,2);
     }
-        public static double calcularPerimetro(int radio){
+        double calcularPerimetro(){
             return 2*Math.PI*radio;
         }
 }
 class rectangulo{
     int base,altura;
-        public static double calcularArea(int base,int altura){
+    rectangulo(int base, int altura){
+        this.base = base;
+        this.altura = altura;
+    }
+        public double calcularArea(){
             return base*altura;
         }
-        public static double calcularPerimetro(int base,int altura){
+        public double calcularPerimetro(){
             return base*2+altura*2;
         }
 }
 class cuadrado{
     int lado;
-        public static double calcularArea(int lado){
+    cuadrado(int lado){
+        this.lado = lado;
+    }
+        public double calcularArea(){
             return Math.pow(lado,2);
         }
-        public static double calcularPerimetro(int lado){
+        public double calcularPerimetro(){
             return lado*4;
         }
 }
 class triangulo{
     int base,altura;
+    triangulo(int base,int altura){
+        this.base = base;
+        this.altura = altura;
+    }
         public double calcularHipotenusa() {
             return Math.pow(base*base + altura*altura, 0.5);
                 }
-        public static double calcularArea(int base,int altura){
+        public double calcularArea(){
             return base*altura/2;
         }
-        public double calcularPerimetro(int base,int altura){
+        public double calcularPerimetro(){
             return base+altura+calcularHipotenusa();
         }
-        void determinarTipoTriángulo() {
+        void determinarTipoTriangulo() {
             if ((base == altura) && (base == calcularHipotenusa()) && (altura == calcularHipotenusa()))
             System.out.println("Es un triángulo equilátero"); /* Todos sus 
             lados son iguales */
