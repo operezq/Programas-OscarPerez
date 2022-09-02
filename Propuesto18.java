@@ -27,6 +27,6 @@ public class Propuestos {
         retefuente = entrada.nextFloat()/100;
         salarioBruto = horas*valorhora;
         salarioNeto = salarioBruto-(salarioBruto*retefuente);
-        System.out.println("\n"+codigo+" "+nombre+" ");
+        System.out.println("\nCódigo del empleado: "+codigo+"\nNombre del empleado: "+nombre+"\nSalario bruto: "+salarioBruto+"\nSalario neto: "+salarioNeto);
     }
 }
