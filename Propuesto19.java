@@ -9,9 +9,9 @@ public class Propuesto19 {
         System.out.print("Ingrese el valor de un lado: ");
         lado = entrada.nextDouble();
         perimetro = triangulo.equilatero(lado);
-        altura = triangulo.alt(perimetro);
+        altura = triangulo.alt(lado);
         area = triangulo.areaa(lado);
-        System.out.println("El perímetro es "+perimetro+"\nLa altura es "+altura+"\nEl área del triángulo es "+area);
+        System.out.println("\nEl perímetro es "+perimetro+"\nLa altura es "+altura+"\nEl área del triángulo es "+area);
     }
 }
 
@@ -22,7 +22,7 @@ class triangulo{
         return perimetro;
     }
     public static double alt(double a){
-        double altura = Math.sqrt(3)*a/2;
+        double altura = (Math.sqrt(3)*a)/2;
         return altura;
     }
     public static double areaa(double a){
