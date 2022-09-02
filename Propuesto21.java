@@ -16,7 +16,8 @@ public class Propuesto21 {
         perimetro = triangulo.perimetro(base,lado1,lado2);
         semiperimetro = triangulo.semiperimetro(base,lado1,lado2);
         area = triangulo.area(base,lado1,lado2);
-        System.out.println("Perímetro: "+perimetro+"\nSemiperímetro: "+semiperimetro+"\nÁrea: "+area);
+        System.out.println("\nPerímetro: "+perimetro+"\nSemiperímetro: "+semiperimetro+"\nÁrea: "+area);
+        System.out.println("\nIMPORTANTE: En caso de obtener en el área un valor como cero o NaN, significa que ingresaste valores no aceptables, repítelo.");
     }
 }
 
